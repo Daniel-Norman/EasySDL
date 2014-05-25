@@ -8,5 +8,7 @@ Download development libraries:
     https://www.libsdl.org/projects/SDL_image/
     
 Update project settings to include the include directories and lib directories of SDL and SDL_image
+
 Add all DLLs to Windows\System32 or Windows\SysWOW64
+
 Set Code-Generation Runtime Library to Multi-threaded DLL
