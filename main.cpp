@@ -1,6 +1,7 @@
 #include "SDL.h"
 #include "SDLWindow.h"
 #include "SDLRect.h"
+#include "SDLImage.h"
 #include <cstdlib>
 #include <thread>
 #include <chrono>
@@ -8,16 +9,21 @@
 //Demo for testing custom easy SDL Objects
 int main(int argc, char* argv[]) {
 
-	if (SDL_Init(SDL_INIT_EVERYTHING) == -1) {
-		return 1;
-	}
+	SDL_Init(SDL_INIT_EVERYTHING);
+	IMG_Init(IMG_INIT_JPG);
 
 	int msSleep = 1000000 / 120;
 	bool leftPressed = false, rightPressed = false, upPressed = false, downPressed = false;
 
 	SDLWindow window("Test", 640, 480);
+
+	SDLImage face("face.png", 200, 200);
+	window.addObject(face);
+
 	SDLRect square(100, 100, 50, 50, 0, 0, 150, 255, true);
 	window.addObject(square);
+
+
 
 	while (true)
 	{
@@ -56,6 +62,9 @@ int main(int argc, char* argv[]) {
 		window.render(); 
 		this_thread::sleep_for(chrono::microseconds(msSleep));
 	}
+
+	SDL_Quit();
+	IMG_Quit();
 
 	return 0;
 }
