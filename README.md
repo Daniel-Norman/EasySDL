@@ -11,4 +11,10 @@ Update project settings to include the include directories and lib directories o
 
 Add all DLLs to Windows\System32 or Windows\SysWOW64
 
-Set Code-Generation Runtime Library to Multi-threaded DLL
+Set Code-Generation -> Runtime Library to Multi-threaded DLL
+
+Add
+    SDL2.lib
+    SDL2main.lib
+    SDL2_image.lib
+to Linker -> Input -> Additional Dependencies
