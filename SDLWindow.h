@@ -2,7 +2,6 @@
 #include "SDL.h"
 #include "SDLObject.h"
 #include <vector>
-#include <Windows.h>
 
 using namespace std;
 

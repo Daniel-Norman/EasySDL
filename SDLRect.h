@@ -1,7 +1,6 @@
 #pragma once
 #include "SDL.h"
 #include "SDLObject.h"
-#include <string>
 
 class SDLRect : public SDLObject
 {
